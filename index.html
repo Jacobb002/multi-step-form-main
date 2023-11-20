@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Multi-step form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img src="./assets/images/bg-sidebar-desktop.svg" alt="background" />
+        <div class="steps">
+          <div class="step">
+            <div data-step="0" class="step-number step-one-number active">
+              1
+            </div>
+            <div class="step-desc">
+              <span>Step 1</span>
+              <span>Your info</span>
+            </div>
+          </div>
+          <div class="step">
+            <div data-step="1" class="step-number step-two-number">2</div>
+            <div class="step-desc">
+              <span>Step 2</span>
+              <span>Select plan</span>
+            </div>
+          </div>
+          <div class="step">
+            <div data-step="2" class="step-number step-three-number">3</div>
+            <div class="step-desc">
+              <span>Step 3</span>
+              <span>Add-ons</span>
+            </div>
+          </div>
+          <div class="step">
+            <div data-step="3" class="step-number step-four-number">4</div>
+            <div class="step-desc">
+              <span>Step 4</span>
+              <span>Summary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Step 1 start -->
+      <div data-step="0" class="right-section step-one">
+        <div class="details">
+          <h1>Personal info</h1>
+          <p>Please provide your name, email address, and phone number.</p>
+        </div>
+        <form class="form-step-one" id="data-form">
+          <div class="form-step-one-inputs">
+            <label for="name-input">
+              <span>Name</span>
+              <span class="input-error-message name-message hidden"
+                >This field is required</span
+              >
+            </label>
+            <input
+              type="text"
+              placeholder="e.g. Stephen"
+              id="name-input"
+              required
+            />
+          </div>
+          <div class="form-step-one-inputs">
+            <label for="email-input">
+              <span>Email Address</span>
+              <span class="input-error-message email-message hidden"
+                >This field is required</span
+              >
+            </label>
+            <input
+              type="text"
+              placeholder="e.g. stephenking@lorem.com"
+              id="email-input"
+              required
+            />
+          </div>
+          <div class="form-step-one-inputs">
+            <label for="phone-input">
+              <span>Phone Number</span>
+              <span class="input-error-message phone-message hidden"
+                >This field is required</span
+              >
+            </label>
+            <input
+              type="text"
+              placeholder="e.g. +1 223 567 980"
+              id="phone-input"
+              required
+            />
+          </div>
+          <input class="submit-data" type="submit" value="Next Step" />
+          <!-- <button class="next-step-btn">Next Step</button> -->
+        </form>
+      </div>
+      <!-- Step 1 end -->
+      <!-- Step 2 start -->
+      <div data-step="1" class="right-section step-two hidden">
+        <div class="details">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or yearly billing.</p>
+        </div>
+        <form class="form-step-two">
+          <div class="form-plan-options monthly">
+            <div class="form-payment-option active">
+              <img src="./assets/images/icon-arcade.svg" alt="" />
+              <div class="plan-details">
+                <span>Arcade</span>
+                <span data-cost="9" class="monthly-cost cost">$9/mo</span>
+              </div>
+            </div>
+            <div class="form-payment-option">
+              <img src="./assets/images/icon-advanced.svg" alt="" />
+              <div class="plan-details">
+                <span>Advanced</span>
+                <span data-cost="12" class="monthly-cost cost">$12/mo</span>
+              </div>
+            </div>
+            <div class="form-payment-option">
+              <img src="./assets/images/icon-pro.svg" alt="" />
+              <div class="plan-details">
+                <span>Pro</span>
+                <span data-cost="15" class="monthly-cost cost">$15/mo</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-plan-options yearly hidden">
+            <div class="form-payment-option">
+              <img src="./assets/images/icon-arcade.svg" alt="" />
+              <div class="plan-details">
+                <span>Arcade</span>
+                <span data-cost="90" class="yearly-cost cost">$90/ye</span>
+                <span class="yearly-discount">2 month free</span>
+              </div>
+            </div>
+            <div class="form-payment-option">
+              <img src="./assets/images/icon-advanced.svg" alt="" />
+              <div class="plan-details">
+                <span>Advanced</span>
+                <span data-cost="120" class="yearly-cost cost">$120/yr</span>
+                <span class="yearly-discount">2 month free</span>
+              </div>
+            </div>
+            <div class="form-payment-option">
+              <img src="./assets/images/icon-pro.svg" alt="" />
+              <div class="plan-details">
+                <span>Pro</span>
+                <span data-cost="20" class="yearly-cost cost">$20/yr</span>
+                <span class="yearly-discount">2 month free</span>
+              </div>
+            </div>
+          </div>
+          <div class="payment-option">
+            <span class="switch-monthly active">Monthly</span>
+            <div class="toggle-btn">
+              <div class="slider"></div>
+            </div>
+            <span class="switch-yearly">Yearly</span>
+          </div>
+        </form>
+        <button class="go-back-btn">Go Back</button>
+        <button class="next-step-btn">Next Step</button>
+      </div>
+      <!-- Step 2 end -->
+      <!-- Step 3 start -->
+      <div data-step="2" class="right-section step-three hidden">
+        <div class="details">
+          <h1>Pick add-ons</h1>
+          <p>Add-ons help enhance your gaming experience.</p>
+        </div>
+        <form class="form-step-three">
+          <div class="adds-options monthly">
+            <div class="add-option">
+              <label for="online-service-montly">
+                <input
+                  class="add-checkbox"
+                  type="checkbox"
+                  name="online-service-montly"
+                  id="online-service-montly"
+                />
+                <div class="option-body">
+                  <div>
+                    <span class="add-title">Online service</span>
+                    <span class="add-desc">Access to multiplayer games</span>
+                  </div>
+                  <div data-cost="1" class="add-cost">+$1/mo</div>
+                </div>
+              </label>
+            </div>
+            <div class="add-option">
+              <label for="larger-storage-montly">
+                <input
+                  class="add-checkbox"
+                  type="checkbox"
+                  name="larger-storage-montly"
+                  id="larger-storage-montly"
+                />
+                <div class="option-body">
+                  <div>
+                    <span class="add-title">Larger storage</span>
+                    <span class="add-desc">Extra 1TB of cloud save</span>
+                  </div>
+                  <div data-cost="2" class="add-cost">+$2/mo</div>
+                </div>
+              </label>
+            </div>
+            <div class="add-option">
+              <label for="customizable-profile-montly">
+                <input
+                  class="add-checkbox"
+                  type="checkbox"
+                  name="customizable-profile-montly"
+                  id="customizable-profile-montly"
+                />
+                <div class="option-body">
+                  <div>
+                    <span class="add-title">Customizable profile</span>
+                    <span class="add-desc">Custom theme on your profile</span>
+                  </div>
+                  <div data-cost="2" class="add-cost">+$2/mo</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="adds-options yearly hidden">
+            <div class="add-option">
+              <label for="online-service-yearly">
+                <input
+                  class="add-checkbox"
+                  type="checkbox"
+                  name="online-service-yearly"
+                  id="online-service-yearly"
+                />
+                <div class="option-body">
+                  <div>
+                    <span class="add-title">Online service</span>
+                    <span class="add-desc">Access to multiplayer games</span>
+                  </div>
+                  <div data-cost="10" data-cost="10" class="add-cost">
+                    +$10/yr
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="add-option">
+              <label for="larger-storage-yearly">
+                <input
+                  class="add-checkbox"
+                  type="checkbox"
+                  name="larger-storage-yearly"
+                  id="larger-storage-yearly"
+                />
+                <div class="option-body">
+                  <div>
+                    <span class="add-title">Larger storage</span>
+                    <span class="add-desc">Extra 1TB of cloud save</span>
+                  </div>
+                  <div data-cost="20" class="add-cost">+$20/yr</div>
+                </div>
+              </label>
+            </div>
+            <div class="add-option">
+              <label for="customizable-profile-yearly">
+                <input
+                  class="add-checkbox"
+                  type="checkbox"
+                  name="customizable-profile-yearly"
+                  id="customizable-profile-yearly"
+                />
+                <div class="option-body">
+                  <div>
+                    <span class="add-title">Customizable profile</span>
+                    <span class="add-desc">Custom theme on your profile</span>
+                  </div>
+                  <div data-cost="20" class="add-cost">+$20/yr</div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </form>
+        <button class="go-back-btn">Go Back</button>
+        <button class="next-step-btn go-to-summary">Next Step</button>
+      </div>
+      <!-- Step 3 end -->
+      <!-- Step 4 start -->
+      <div data-step="3" class="right-section step-four hidden">
+        <div class="details">
+          <h1>Finishing up</h1>
+          <p>Double-check everything looks OK before confirming.</p>
+        </div>
+        <div class="summary-container">
+          <div class="summary-details">
+            <div class="summary-plan">
+              <div>
+                <div class="plan-title">Arcade (Monthly)</div>
+                <div class="plan-change">Change</div>
+              </div>
+              <div class="plan-cost">$9/mo</div>
+            </div>
+            <div class="summary-ads-list">
+              <!-- <div>
+                <div class="summary-ads-title">Online service</div>
+                <div class="summary-ads-cost">+$1/mo</div>
+              </div>
+              <div>
+                <div class="summary-ads-title">Larger storage</div>
+                <div class="summary-ads-cost">+$2/mo</div>
+              </div> -->
+            </div>
+          </div>
+          <div class="summary-total">
+            <div class="summary-total-title">Total (per month)</div>
+            <div class="total-cost">+$12/mo</div>
+          </div>
+        </div>
+
+        <button class="go-back-btn">Go Back</button>
+        <button class="next-step-btn confirm-btn">Confirm</button>
+      </div>
+      <!-- Step 4 end -->
+      <!-- Step 5 start -->
+      <div
+        data-step="4"
+        class="right-section step-five thank-you-section hidden"
+      >
+        <img
+          src="./assets/images/icon-thank-you.svg"
+          alt=""
+          class="thanksImg"
+        />
+        <div class="details">
+          <h1>Thank you!</h1>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com
+          </p>
+        </div>
+      </div>
+      <!-- Step 5 end -->
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

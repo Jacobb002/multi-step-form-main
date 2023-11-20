@@ -1,0 +1,524 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  transition: 0.3s all ease-in-out;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(217, 100%, 97%);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  display: flex;
+  background: hsl(231, 100%, 99%);
+  padding: 15px;
+  border-radius: 8px;
+  width: auto;
+  min-width: 950px;
+  gap: 80px;
+  border: none;
+  -webkit-box-shadow: 13px 17px 24px -11px rgba(152, 152, 170, 1);
+  -moz-box-shadow: 13px 17px 24px -11px rgba(152, 152, 170, 1);
+  box-shadow: 13px 17px 24px -11px rgba(152, 152, 170, 1);
+}
+
+.left-section {
+  /* flex: 1; */
+  height: 100%;
+  /* width: 45%; */
+  position: relative;
+}
+
+.left-section img {
+  position: block;
+}
+
+.steps {
+  position: absolute;
+  top: 6%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+
+.step-number {
+  background: transparent;
+  border: 1px solid hsl(217, 100%, 97%);
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.step-number.active {
+  color: black;
+  background: hsl(206, 94%, 87%);
+}
+
+.step-desc {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.step-desc span:first-child {
+  font-size: 13px;
+  color: hsl(231, 11%, 63%);
+}
+
+.step-desc span:last-child {
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.right-section {
+  margin-top: 3%;
+  width: 60%;
+  margin-right: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  font-size: 16;
+  /* background: red; */
+  position: relative;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.details h1 {
+  color: hsl(213, 96%, 18%);
+}
+
+.details p {
+  color: hsl(231, 11%, 63%);
+}
+
+.form-step-one .form-step-one-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+  color: hsl(213, 96%, 18%);
+}
+
+.form-step-one .form-step-one-inputs label {
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-between;
+}
+
+.input-error-message {
+  color: hsl(354, 84%, 57%);
+  font-weight: 700;
+}
+
+.input-error-border {
+  border: 1px solid hsl(354, 84%, 57%) !important;
+}
+
+.form-step-one .form-step-one-inputs input {
+  border: 1px solid hsl(231, 11%, 63%);
+  background: hsl(231, 100%, 99%);
+  border-radius: 8px;
+  padding: 12px;
+  color: hsl(213, 96%, 18%);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+  outline: none;
+}
+
+.form-step-one .form-step-one-inputs input:focus {
+  border: 1px solid hsl(213, 96%, 18%);
+}
+
+.form-step-one .form-step-one-inputs input::placeholder {
+  font-weight: 400;
+  color: hsl(229, 24%, 87%);
+  font-size: 16px;
+}
+
+.next-step-btn,
+.submit-data {
+  position: absolute;
+  bottom: 18px;
+  right: 0;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.submit-data:hover,
+.next-step-btn:hover {
+  background: hsl(243, 100%, 62%);
+}
+
+.form-plan-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-payment-option {
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 8px;
+  padding: 17px 13px;
+  height: 185px;
+  width: 30%;
+  cursor: pointer;
+  position: relative;
+}
+
+.form-payment-option.active {
+  border: 2px solid hsl(243, 100%, 62%);
+}
+
+.form-payment-option.active:hover {
+  border: 2px solid hsl(243, 100%, 62%);
+}
+
+.form-payment-option:hover,
+.form-payment-option:focus {
+  border: 2px solid hsl(213, 96%, 18%);
+  transition: none;
+}
+
+.plan-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  bottom: 15px;
+}
+
+.form-plan-options.monthly .form-payment-option .plan-details span:first-child {
+  color: hsl(213, 96%, 18%);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.form-plan-options.yearly .form-payment-option .plan-details span:first-child {
+  color: hsl(213, 96%, 18%);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.form-plan-options.monthly .form-payment-option .plan-details .monthly-cost {
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+
+.month-year-payment {
+  flex: 1;
+  align-items: center;
+  text-align: center;
+}
+
+.go-back-btn {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  padding: 12px 25px;
+  border: none;
+  background: transparent;
+  color: hsl(231, 11%, 63%);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.go-back-btn:hover {
+  color: hsl(213, 96%, 18%);
+}
+
+.payment-option {
+  background: hsl(217, 100%, 97%);
+  padding: 12px 0px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  gap: 15px;
+}
+
+.payment-option span {
+  cursor: pointer;
+}
+
+.switch-monthly,
+.switch-yearly {
+  color: hsl(231, 11%, 63%);
+}
+
+.switch-monthly.active,
+.switch-yearly.active {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  height: 20px;
+  width: 40px;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 15px;
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+
+.toggle-btn .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 15px;
+  transition: 0.3s all ease-in-out;
+}
+
+.toggle-btn .slider::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s all ease-in-out;
+}
+
+.toggle-btn.active .slider::before {
+  transform: translateX(20px);
+  transition: 0.3s all ease-in-out;
+}
+
+.form-plan-options.yearly .form-payment-option .plan-details .yearly-cost {
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+
+.form-plan-options.yearly .form-payment-option .plan-details .yearly-discount {
+  color: hsl(213, 96%, 18%);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.adds-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-option label {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 15px;
+  align-items: center;
+  padding: 20px 25px;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.add-option.active label {
+  border: 2px solid hsl(243, 100%, 62%);
+}
+
+.option-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.option-body div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.add-title {
+  color: hsl(213, 96%, 18%);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.add-desc {
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.add-cost {
+  color: hsl(243, 100%, 62%);
+}
+
+/* .add-input {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border: 1px solid hsl(231, 11%, 63%);
+} */
+
+.add-option input {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  accent-color: hsl(243, 100%, 62%);
+}
+
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  background: hsl(217, 100%, 97%);
+  border-radius: 15px;
+  -webkit-box-shadow: 13px 17px 24px -11px rgba(152, 152, 170, 1);
+  -moz-box-shadow: 13px 17px 24px -11px rgba(152, 152, 170, 1);
+  box-shadow: 13px 17px 24px -11px rgba(152, 152, 170, 1);
+}
+
+.summary-plan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-plan div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.plan-title {
+  color: hsl(213, 96%, 18%);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.plan-change {
+  color: hsl(231, 11%, 63%);
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.plan-change:hover {
+  color: hsl(243, 100%, 62%);
+}
+
+.plan-cost {
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+}
+
+.summary-ads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 25px;
+  border-top: 1px solid hsl(231, 11%, 63%);
+}
+
+.summary-ads-list div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.summary-ads-title {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+
+.summary-ads-cost {
+  color: hsl(213, 96%, 18%);
+  font-weight: 400;
+}
+
+.summary-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.summary-total-title {
+  color: hsl(231, 11%, 63%);
+}
+
+.total-cost {
+  color: hsl(243, 100%, 62%);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.right-section.step-five {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 95px;
+}
+
+.right-section.step-five img {
+  width: 80px;
+  height: 80px;
+}
+
+.right-section.step-five .details {
+  text-align: center;
+  width: 450px;
+}
